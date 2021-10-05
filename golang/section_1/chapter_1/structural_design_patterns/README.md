@@ -15,3 +15,9 @@ This would give an error because processor is of type `Iprocess` interface and t
 fmt.Println(Adapter{}.adaptee.adapterType)
 ```
 This would give `0` as expected because `adaptee` is an attribute of `Adapter` class.
+
+### Lightning port
+We have a `computer` interface which is implementing `insertIntoLightningPort()` function. Our purpose is to insert USB by client from mac or windows. For mac we can directly invoke the interface function but for windows we need to convert the lightning singal to USB and then insert it into the computer. For this reason client uses the `insertLightningConnectorIntoComputer()` function for type `Computer`. To run this execute the command
+```
+go run .
+```
