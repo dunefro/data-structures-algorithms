@@ -2,7 +2,7 @@ package main
 
 func main() {
 	macComputer := &mac{}
-	// windowsComputer := &windows{}
+	windowsComputer := &windows{}
 	hpPrinter := &hp{}
 	epsonPrinter := &epson{}
 
@@ -11,4 +11,10 @@ func main() {
 
 	macComputer.setPrinter(epsonPrinter)
 	macComputer.print()
+
+	windowsComputer.setPrinter(hpPrinter)
+	windowsComputer.print()
+
+	windowsComputer.setPrinter(epsonPrinter)
+	windowsComputer.print()
 }
