@@ -35,3 +35,14 @@ go run .
     * d. Refined Abstractions provide variants of control logic. Like their parent, they work with different implementations via the general implementation interface.
     * e. Usually, the Client is only interested in working with the abstraction. However, it’s the client’s job to link the abstraction object with one of the implementation objects
     ![Bridge Structural design patter](../images/bridge.png)
+
+### Printer
+In this printer we are trying to implement both the printer `hp` and `epson` from different OS like `mac` and `windows`. For this their respective files are created. Our purpose it to make client not worried about connecting different computer to different printers.
+
+## Composite
+Composite is a structural design pattern that lets you compose objects into tree structures and then work with these structures as if they were individual objects. https://refactoring.guru/design-patterns/composite
+
+### Files and folders
+Let’s try to understand the Composite pattern with an example of an operating system’s file system. In the file system, there are two types of objects: files and folders. There are cases when files and folders should be treated to be the same way. This is where the Composite pattern comes in handy.
+
+Imagine that you need to run a search for a particular keyword in your file system. This search operation applies to both files and folders. For a file, it will just look into the contents of the file; for a folder, it will go through all files of that folder to find that keyword.
