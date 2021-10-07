@@ -49,4 +49,18 @@ Imagine that you need to run a search for a particular keyword in your file syst
 
 ## Decorators
 Decorator is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
-You create a similar interface for different behaviours which work independently and attach these behaviours to the object to increase its functionatlity.
+You create a similar interface for different behaviours which work independently and attach these behaviours to the object to increase its functionatlity. More theory can be reached here https://refactoring.guru/design-patterns/decorator
+
+## Facade
+Facade is a structural design pattern that provides a simplified interface to a library, a framework, or any other complex set of classes. Theory can be reached here https://refactoring.guru/design-patterns/facade.
+A facade is a class that provides a simple interface to a complex subsystem which contains lots of moving parts. A facade might provide limited functionality in comparison to working with the subsystem directly. However, it includes only those features that clients really care about. This is similar to the python package that we have built over database, datastore and messagequeue class. Having a facade is handy when you need to integrate your app with a sophisticated library that has dozens of features, but you just need a tiny bit of its functionality.
+
+### wallet
+It’s easy to underestimate the complexities that happen behind the scenes when you order a pizza using your credit card. There are dozens of subsystems that are acting in this process. Here’s just a shortlist of them:
+
+1. Check account
+2. Check security PIN
+3. Credit/debit balance
+4. Make ledger entry
+5. Send notification
+In a complex system like this, it’s easy to get lost and easy to break stuff if you’re doing something wrong. That’s why there’s a concept of the Facade pattern: a thing that lets the client work with dozens of components using a simple interface. The client only needs to enter the card details, the security pin, the amount to pay, and the operation type. The Facade directs further communications with various components without exposing the client to internal complexities.
