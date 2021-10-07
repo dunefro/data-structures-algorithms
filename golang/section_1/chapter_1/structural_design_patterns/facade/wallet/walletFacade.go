@@ -36,9 +36,10 @@ func (w *walletFacade) addMoneyToWallet(accountID string, code int, amount int) 
 	w.wallet.creditBalance(amount)
 	w.notification.sendWalletCreditNotification()
 	w.ledger.makeEntry(accountID, "credit", amount)
+	return nil
 }
 
-func (w *walletFacade) deductMoneyFromWallet(accountID string, securityCode int, amount int) error {
+func (w *walletFacade) deductMoneyFromWallet(accountID string, code int, amount int) error {
 	fmt.Println("Process to deduct money from the account")
 	err := w.account.checkAccount(accountID)
 	if err != nil {
@@ -48,10 +49,11 @@ func (w *walletFacade) deductMoneyFromWallet(accountID string, securityCode int,
 	if err != nil {
 		return err
 	}
-	err := w.wallet.debitBalance(amount)
+	err = w.wallet.debitBalance(amount)
 	if err != nil {
 		return err
 	}
 	w.notification.sendWalletCreditNotification()
 	w.ledger.makeEntry(accountID, "debit", amount)
+	return nil
 }
