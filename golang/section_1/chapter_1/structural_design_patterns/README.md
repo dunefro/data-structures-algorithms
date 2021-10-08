@@ -64,3 +64,11 @@ It’s easy to underestimate the complexities that happen behind the scenes when
 4. Make ledger entry
 5. Send notification
 In a complex system like this, it’s easy to get lost and easy to break stuff if you’re doing something wrong. That’s why there’s a concept of the Facade pattern: a thing that lets the client work with dozens of components using a simple interface. The client only needs to enter the card details, the security pin, the amount to pay, and the operation type. The Facade directs further communications with various components without exposing the client to internal complexities.
+
+## Flyweight
+Flyweight is a structural design pattern that lets you fit more objects into the available amount of RAM by sharing common parts of state between multiple objects instead of keeping all of the data in each object. The Flyweight pattern suggests that you stop storing the extrinsic state inside the object. Instead, you should pass this state to specific methods which rely on it. Only the intrinsic state stays within the object, letting you reuse it in different contexts. As a result, you’d need fewer of these objects since they only differ in the intrinsic state, which has much fewer variations than the extrinsic. Theory is available here at https://refactoring.guru/design-patterns/flyweight.
+
+### Counter Strike
+In counter strike there are two kind of players called terrorists and counter-terrorists. There are dress-codes for terrorists and counter-terrorists.
+Let's suppose there are 5 player of each type which will lead to total of 10 different types of dress objects. Instead of this we can create only two objects for each type of dress.
+The Flyweight pattern takes out the common parts and creates flyweight objects. These flyweight objects (dress) can then be shared among multiple objects (player). This drastically reduces the number of dress objects, and the good part is that even if you create more players, only two dress objects will be sufficient.
