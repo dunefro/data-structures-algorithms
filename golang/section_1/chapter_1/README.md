@@ -16,3 +16,6 @@ A complete binary tree is the tree in which all the elements are filled except t
     * b. O(n^2)   - Quadratic
     * c. O(n^3)   - Cubic
     * d. O(log n) - logarithmic
+6. There are also different kind of complexity like
+    * a. Brute Force - Less memory efficient and slow to run
+    * b. Divide and conquer - Recursively solve your problem to combine to the solution
