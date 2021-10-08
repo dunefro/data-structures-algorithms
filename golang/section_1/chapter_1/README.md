@@ -11,5 +11,8 @@ intList.PushBack(14)
     ![Heap data structure](./images/heap.png)
 A complete binary tree is the tree in which all the elements are filled except the termianl ones. Level 'r' of the tree will have 2^r nodes. If any element is filled at the 'i' position then its left successor will be at the position '2i' and the right onw will be at '2i+1'.
 4. Structural patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient.
-    * a. Adapater: Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate. An example of adapter would be to convert all the data coming into XML format to JSON format for a third-party analytics tool.
-    * b. 
+5. Big Omega and Big theta are two notations for the lower and upper bound for a particular algorithm. There are different kind of complexities
+    * a. O(n)     - Linear
+    * b. O(n^2)   - Quadratic
+    * c. O(n^3)   - Cubic
+    * d. O(log n) - logarithmic
