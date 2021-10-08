@@ -19,3 +19,4 @@ A complete binary tree is the tree in which all the elements are filled except t
 6. There are also different kind of complexity like
     * a. Brute Force - Less memory efficient and slow to run
     * b. Divide and conquer - Recursively solve your problem to combine to the solution
+    * c. Backtracking - It constructs the solution incrementally
