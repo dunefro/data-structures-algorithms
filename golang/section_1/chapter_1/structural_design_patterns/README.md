@@ -72,3 +72,11 @@ Flyweight is a structural design pattern that lets you fit more objects into the
 In counter strike there are two kind of players called terrorists and counter-terrorists. There are dress-codes for terrorists and counter-terrorists.
 Let's suppose there are 5 player of each type which will lead to total of 10 different types of dress objects. Instead of this we can create only two objects for each type of dress.
 The Flyweight pattern takes out the common parts and creates flyweight objects. These flyweight objects (dress) can then be shared among multiple objects (player). This drastically reduces the number of dress objects, and the good part is that even if you create more players, only two dress objects will be sufficient.
+
+
+## Proxy
+Proxy is a structural design pattern that lets you provide a substitute or placeholder for another object. A proxy controls access to the original object, allowing you to perform something either before or after the request gets through to the original object. To understand this let us assume we want to perform some process based on client's request. For this client creates an object and this object is passed to our class which implements the actual process in background. When this happens the object from client is copied to all the places inside the implemented class. To stop this we introduce a proxy in between these two so that client's object can offload the work to proxy which creates a copy of the client object and performs the work. Moreover if we want to perform any additional activity over this client object then we can perform it in the proxy without chaning the actual background process.
+![Proxy](../images/proxy.png) 
+
+### nginx
+Proxy is a structural design pattern that provides an object that acts as a substitute for a real service object used by a client. A proxy receives client requests, does some work (access control, caching, etc.) and then passes the request to a service object.
