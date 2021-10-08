@@ -80,3 +80,18 @@ Proxy is a structural design pattern that lets you provide a substitute or place
 
 ### nginx
 Proxy is a structural design pattern that provides an object that acts as a substitute for a real service object used by a client. A proxy receives client requests, does some work (access control, caching, etc.) and then passes the request to a service object.
+
+
+## Private class data
+The private class data is used to secure the data in a class. This pattern encapsulated the initialization of the class data.
+
+### customer name bank example
+In this example we are trying to protect the details of the account. The only details that we are trying to give is the customer name. For this we use an interface to hide the complexity of the details in a different struct and then try to set the properties of this struct using the methods of the `account` type.
+Try running `go run privateclass.go` you will observe the following details
+```
+Private class hidden {}
+Account Customer Name John Smith
+Account id 4532
+Account Type current
+```
+The output `Private class hidden {}` shows that when we try to marshal the details of account it is kept hidden.
