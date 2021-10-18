@@ -87,4 +87,7 @@ mysql> select * from customer
 +------+-------------------+-----------+
 3 rows in set (0.00 sec)
 ```
-4. After this you can start using `database_opertions.go` to retrieve the contents of the database.
+4. To retrieve the contents of the database
+```
+go run get_customer_list.go
+```
