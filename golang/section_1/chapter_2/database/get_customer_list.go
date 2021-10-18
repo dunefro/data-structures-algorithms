@@ -63,8 +63,32 @@ func GetCustomers() []Customer {
 
 }
 
+func InsertCustomer(customer Customer) {
+	var database *sql.DB
+	database = GetConnection()
+	defer database.Close()
+	var err error
+	var insert *sql.Stmt
+	insert, err = database.Prepare("INSERT INTO customer VALUES (?,?,?);")
+	if err != nil {
+		fmt.Errorf("Failed to insert the customer details")
+		panic(err.Error())
+	}
+	insert.Exec(customer.CustomerId, customer.CustomerName, customer.SSN)
+
+}
+
 func main() {
 	var customers []Customer
 	customers = GetCustomers()
+	fmt.Println(customers)
+	InsertCustomer(Customer{
+		CustomerId:   4,
+		CustomerName: "Ron Weasely",
+		SSN:          "3937849",
+	})
+	// time.Sleep(2 * time.Second)
+	customers = GetCustomers()
+	fmt.Println("After adding Ron")
 	fmt.Println(customers)
 }
