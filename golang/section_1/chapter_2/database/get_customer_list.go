@@ -13,6 +13,19 @@ type Customer struct {
 	SSN          string
 }
 
+func UpdateCustomer(customer Customer) {
+	var database *sql.DB
+	database = GetConnection()
+	defer database.Close()
+	var err error
+	var update *sql.Stmt
+	update, err = database.Prepare("UPDATE customer SET ssn=? WHERE id=?")
+	if err != nil {
+		fmt.Errorf("Not able to update the name of the customer")
+	}
+	update.Exec(customer.SSN, customer.CustomerId)
+}
+
 func GetConnection() (database *sql.DB) {
 	databaseDriver := "mysql"
 	databaseUser := "root"
@@ -60,7 +73,6 @@ func GetCustomers() []Customer {
 		customers = append(customers, customer)
 	}
 	return customers
-
 }
 
 func InsertCustomer(customer Customer) {
@@ -75,7 +87,21 @@ func InsertCustomer(customer Customer) {
 		panic(err.Error())
 	}
 	insert.Exec(customer.CustomerId, customer.CustomerName, customer.SSN)
+}
 
+func DeleteCustomer(customer Customer) {
+	var database *sql.DB
+	database = GetConnection()
+	defer database.Close()
+	var err error
+	var delete *sql.Stmt
+
+	delete, err = database.Prepare("DELETE FROM customer WHERE id=?")
+	if err != nil {
+		fmt.Errorf("Not able to delete the customer")
+		panic(err.Error())
+	}
+	delete.Exec(customer.CustomerId)
 }
 
 func main() {
@@ -87,8 +113,27 @@ func main() {
 		CustomerName: "Ron Weasely",
 		SSN:          "3937849",
 	})
-	// time.Sleep(2 * time.Second)
+	fmt.Println()
 	customers = GetCustomers()
 	fmt.Println("After adding Ron")
 	fmt.Println(customers)
+	UpdateCustomer(Customer{
+		CustomerId:   4,
+		CustomerName: "Ron Weasely",
+		SSN:          "0000",
+	})
+	fmt.Println()
+	fmt.Println("Updating Ron's SSN value")
+	customers = GetCustomers()
+	fmt.Println(customers)
+	DeleteCustomer(Customer{
+		CustomerId:   4,
+		CustomerName: "Ron Weasely",
+		SSN:          "0000",
+	})
+	fmt.Println()
+	fmt.Println("After deleting Ron's entry")
+	customers = GetCustomers()
+	fmt.Println(customers)
+
 }

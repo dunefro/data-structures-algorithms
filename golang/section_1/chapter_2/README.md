@@ -53,7 +53,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql> use crm;
 Database changed
-mysql> CREATE TABLE customer (id int, name varchar(255), ssn varchar(255));
+mysql> CREATE TABLE customer (id int, name varchar(255), ssn varchar(255), PRIMARY KEY (id));
 Query OK, 0 rows affected (0.03 sec)
 
 mysql> show tables;
