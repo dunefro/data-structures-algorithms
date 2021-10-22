@@ -53,7 +53,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 mysql> use crm;
 Database changed
-mysql> CREATE TABLE customer (id int, name varchar(255), ssn varchar(255), PRIMARY KEY (id));
+mysql> CREATE TABLE customer (id int NOT NULL AUTO_INCREMENT, name varchar(255), ssn varchar(255), PRIMARY KEY (id));
 Query OK, 0 rows affected (0.03 sec)
 
 mysql> show tables;
@@ -64,13 +64,12 @@ mysql> show tables;
 +---------------+
 1 row in set (0.00 sec)
 
-mysql> INSERT INTO cusomter values(1,"Vedant Pareek", 39048732)
-    -> ;
-ERROR 1146 (42S02): Table 'crm.cusomter' doesn't exist
+# This is to insert the values with the ID
 mysql> INSERT INTO customer values(1,"Vedant Pareek", 39048732);
 Query OK, 1 row affected (0.01 sec)
 
-mysql> INSERT INTO customer values(2,"Harry Potter", "294587230");
+# As ID is auto-incremented, so we can use the below syntax enter details without passing the ID
+mysql> INSERT INTO customer (name, ssn) values("Harry Potter", "294587230");
 Query OK, 1 row affected (0.11 sec)
 
 mysql> INSERT INTO customer values(3,"Hermionie Granger", "294387230");
@@ -91,3 +90,13 @@ mysql> select * from customer
 ```
 go run get_customer_list.go
 ```
+**NOTE: `defer` statements are called after `panic` statements are executed.**
+
+# Webforms
+In this we will learn about webforms using `net/http` package from golang. In this we will perform the CRUD operations which are CREATE, READ, UPDATE, DELETE.
+1. To run the basic http server, this will display the `main.html` over port 8000
+```
+go run webforms.go
+```
+2. To perform the operation through UI over `crm` database, we will go inside the `webforms` directory and then execute `go run .`
+3. Post this hit the browser with the URL `http://127.0.0.1:8000` to perform the required operations.

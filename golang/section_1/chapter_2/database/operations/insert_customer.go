@@ -13,10 +13,10 @@ func InsertCustomer(customer Customer) {
 	defer database.Close()
 	var err error
 	var insert *sql.Stmt
-	insert, err = database.Prepare("INSERT INTO customer VALUES (?,?,?);")
+	insert, err = database.Prepare("INSERT INTO customer (name, ssn) VALUES (?,?);")
 	if err != nil {
 		fmt.Errorf("Failed to insert the customer details")
 		panic(err.Error())
 	}
-	insert.Exec(customer.CustomerId, customer.CustomerName, customer.SSN)
+	insert.Exec(customer.CustomerName, customer.SSN)
 }

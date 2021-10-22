@@ -37,5 +37,8 @@ func main() {
 	fmt.Println("After deleting Ron's entry")
 	customers = operations.GetCustomers()
 	fmt.Println(customers)
-
+	fmt.Println()
+	fmt.Println("Retrieving the Customer by ID")
+	cust := operations.GetCustomerByID(2)
+	fmt.Println(cust)
 }
