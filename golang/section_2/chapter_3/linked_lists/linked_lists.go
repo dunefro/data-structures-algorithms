@@ -56,6 +56,34 @@ func main() {
 				fmt.Print(err.Error())
 				fmt.Println("Not able to find a node with a value", value, "in the list")
 			}
+		case 6:
+			var err error
+			start, err = deleteNodeFromBeginning(start)
+			if err != nil {
+				fmt.Print(err.Error())
+				fmt.Println(" Not able to delete the value")
+			}
+		case 7:
+			var err error
+			start, err = deleteNodeFromEnd(start)
+			if err != nil {
+				fmt.Print(err.Error())
+				fmt.Println(" Not able to delete the value")
+			}
+		case 8:
+			var err error
+			var value int
+			fmt.Printf("Enter the value you want to delete: ")
+			fmt.Scanf("%d", &value)
+			start, err = deleteNodeFromGivenValue(start, value)
+			if err != nil {
+				fmt.Print(err.Error())
+				fmt.Println("Not able to delete the value", value)
+			}
+		case 9:
+			start = deleteList(start)
+		case 10:
+			start = sortList(start)
 		case 11:
 			exit = true
 		}
