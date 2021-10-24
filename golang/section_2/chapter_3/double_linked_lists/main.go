@@ -56,36 +56,35 @@ func main() {
 			if err != nil {
 				fmt.Println(err.Error())
 			}
-		// case 6:
-		// 	var err error
-		// 	start, err = deleteNodeFromBeginning(start)
-		// 	if err != nil {
-		// 		fmt.Print(err.Error())
-		// 		fmt.Println(" Not able to delete the value")
-		// 	}
-		// case 7:
-		// 	var err error
-		// 	start, err = deleteNodeFromEnd(start)
-		// 	if err != nil {
-		// 		fmt.Print(err.Error())
-		// 		fmt.Println(" Not able to delete the value")
-		// 	}
-		// case 8:
-		// 	var err error
-		// 	var value int
-		// 	fmt.Printf("Enter the value you want to delete: ")
-		// 	fmt.Scanf("%d", &value)
-		// 	start, err = deleteNodeFromGivenValue(start, value)
-		// 	if err != nil {
-		// 		fmt.Print(err.Error())
-		// 		fmt.Println("Not able to delete the value", value)
-		// 	}
-		// case 9:
-		// 	start = deleteList(start)
-		// case 10:
-		// 	start = sortList(start)
+		case 6:
+			var err error
+			start, err = deleteNodeFromBeginning(start)
+			if err != nil {
+				fmt.Print(err.Error())
+			}
+		case 7:
+			var err error
+			start, err = deleteNodeFromEnd(start)
+			if err != nil {
+				fmt.Print(err.Error())
+			}
+		case 8:
+			var err error
+			var value int
+			fmt.Printf("Enter the value you want to delete: ")
+			fmt.Scanf("%d", &value)
+			start, err = deleteNodeFromGivenValue(start, value)
+			if err != nil {
+				fmt.Print(err.Error())
+			}
+		case 9:
+			start = deleteList(start)
+		case 10:
+			start = sortList(start)
 		case 11:
 			exit = true
+		default:
+			fmt.Println("Unrecognized option", opt)
 		}
 	}
 
