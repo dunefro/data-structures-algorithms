@@ -8,6 +8,9 @@ func addNodeToBeginning(start *node, value int) *node {
 		val:  value,
 		next: nil,
 	}
+	if start != nil {
+		start.prev = newNode
+	}
 	(*newNode).next = start
 	start = newNode
 	return start
