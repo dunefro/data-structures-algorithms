@@ -26,3 +26,10 @@ Enter the option according to your need
 
 # Double linked list
 To run the same for double linked list go inside the directory `cd double_linked_lists/` and then execute `go run .`
+
+
+# Sets
+Sets are linear data structures that are not stored in order. To check the operations performed on sets go inside teh directory `sets` and run `go run .`
+1. In this we perform functions to add elements and remove them from set
+2. We also check if an element exist in a particular set.
+3. We perform intersection and union on two sets.
