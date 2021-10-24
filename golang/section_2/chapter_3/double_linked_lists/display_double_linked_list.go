@@ -4,7 +4,7 @@ import "fmt"
 
 func display(start *node) {
 	if start == nil {
-		fmt.Println("Empty linked lists")
+		fmt.Println("Empty linked list")
 		return
 	}
 	for ptr := start; ptr != nil; ptr = ptr.next {
