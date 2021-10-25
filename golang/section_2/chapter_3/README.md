@@ -33,3 +33,34 @@ Sets are linear data structures that are not stored in order. To check the opera
 1. In this we perform functions to add elements and remove them from set
 2. We also check if an element exist in a particular set.
 3. We perform intersection and union on two sets.
+
+# Queue
+Queue is a linear data structure in which data is entered from the rear and taken out from the front following last in first out approach. 
+
+## Linked List queue
+Go inside `cd queue/linked_list_queue/` and run 
+```
+$ go run .
+1
+*** MENU ***
+1. Insert
+2. Delete
+3. Peek
+4. Display
+5. Exit
+Enter your option: 
+```
+## Circular  queue
+Circular queue is of array form other then the one implemented above. To execute this
+`cd circular_queue/` and execute
+```
+$ go run .
+
+*** MENU ***
+1. Insert
+2. Delete
+3. Peek
+4. Display
+5. Exit
+Enter your option:
+```
